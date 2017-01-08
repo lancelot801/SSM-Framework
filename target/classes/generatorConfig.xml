@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+		PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.34\mysql-connector-java-5.1.34.jar" />
+	<context id="MySqlTables" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/contest?useUnicode=true&amp;characterEncoding=UTF-8"
+			userId="root" password="123456">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:生成PO类的位置 -->
+		<javaModelGenerator targetPackage="cn.joongky.association.pojo"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- targetProject:mapper映射文件生成的位置 -->
+		<sqlMapGenerator targetPackage="cn.joongky.association.mapper"
+			targetProject="src/main/resources">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+
+		<!-- targetPackage：mapper接口生成的位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="cn.joongky.association.dao" targetProject="src/main/java">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+
+		<!--  <table tableName="contestmessage" domainObjectName="Contestmessage">
+		</table> --> 
+		<!-- <table tableName="wx_menu" domainObjectName="WxMenu">
+		</table> -->
+		<!--  <table tableName="category" domainObjectName="Category">
+		</table>-->
+
+	    <table tableName="admin" domainObjectName="Admin">
+		</table> 
+
+		<!-- <table tableName="course" domainObjectName="Course">
+		</table> -->
+
+		<!-- <table tableName="course_order" domainObjectName="CourseOrder">
+		</table> -->
+
+		<!-- <table tableName="course_teacher" domainObjectName="CourseTeacher">
+		</table>
+
+		<table tableName="course_user" domainObjectName="CourseUser">
+		</table>
+
+		<table tableName="courseware" domainObjectName="Courseware">
+		</table>
+
+		
+
+		<table tableName="person" domainObjectName="Person">
+		</table>
+
+		<table tableName="user_login" domainObjectName="UserLogin">
+		</table>
+
+		<table tableName="user_token" domainObjectName="UserToken">
+		</table> -->
+		<!-- <table tableName=""></table> -->
+
+	</context>
+</generatorConfiguration>
+
